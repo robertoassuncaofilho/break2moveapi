@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 from rest_framework.schemas import get_schema_view
-from game.endpoints import NextChallengeView
+from game.endpoints import NextChallengeView, CompleteChallengeView
 from game.auth_token import CustomAuthToken
 from game.social_login import FacebookLogin, FacebookConnect
 from dj_rest_auth.registration.views import (
@@ -36,6 +36,7 @@ urlpatterns = [
         extra_context={'schema_url':'openapi-schema'}
     ), name='swagger-ui'),
     path('nextchallenge/', NextChallengeView.as_view()),
+    path('completechallenge/', CompleteChallengeView.as_view()),
     path('api-token-auth/', CustomAuthToken.as_view()),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),

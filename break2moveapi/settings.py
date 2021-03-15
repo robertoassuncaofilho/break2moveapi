@@ -35,8 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['break2move.herokuapp.com']
-
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(' ')
 
 # Application definition
 
@@ -137,11 +136,7 @@ DATABASES = {
     }
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-    "http://127.0.0.1:8000",
-    "https://robertoassuncaofilho.github.io"
-]
+CORS_ALLOWED_ORIGINS = env('CORS_ALLOWED_ORIGINS').split(' ')
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [

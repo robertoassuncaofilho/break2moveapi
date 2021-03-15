@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Challenge, Profile
+from .models import Challenge, Profile, CompletedChallenge
 # Register your models here.
 @admin.register(Challenge)
 class ChallengeAdmin(admin.ModelAdmin):
@@ -7,4 +7,8 @@ class ChallengeAdmin(admin.ModelAdmin):
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(CompletedChallenge)
+class CompletedChallengeAdmin(admin.ModelAdmin):
     pass

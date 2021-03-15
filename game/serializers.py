@@ -1,5 +1,5 @@
 from rest_framework import serializers, exceptions
-from .models import Challenge, Profile
+from .models import Challenge, Profile, CompletedChallenge
 from django.contrib.auth.models import User
 from dj_rest_auth.serializers import UserDetailsSerializer, LoginSerializer, TokenSerializer
 
@@ -26,6 +26,11 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = ('picture')
+
+class CompletedChallengeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CompletedChallenge
+        fields = '__all__'
 
 class UserSerializer(UserDetailsSerializer):
 
