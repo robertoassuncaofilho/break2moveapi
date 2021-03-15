@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 from rest_framework.schemas import get_schema_view
+from rest_framework.routers import DefaultRouter
 from game.endpoints import NextChallengeView, CompleteChallengeView
 from game.auth_token import CustomAuthToken
 from game.social_login import FacebookLogin, FacebookConnect
@@ -24,6 +25,7 @@ from dj_rest_auth.registration.views import (
     SocialAccountListView, SocialAccountDisconnectView
 )
 
+router = DefaultRouter()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('openapi', get_schema_view(
@@ -53,3 +55,5 @@ urlpatterns = [
         name='social_account_disconnect'
     )
 ]
+
+urlpatterns += router.urls
