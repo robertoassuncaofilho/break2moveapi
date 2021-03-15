@@ -15,6 +15,7 @@ django-environ==0.4.5
 django-heroku==0.3.1
 django-storages==1.11.1
 djangorestframework==3.12.2
+djangorestframework-simplejwt==4.6.0
 idna==2.10
 jmespath==0.10.0
 oauthlib==3.1.0
