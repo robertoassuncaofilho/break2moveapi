@@ -16,6 +16,6 @@ class CustomAuthToken(ObtainAuthToken):
             'id': user.id,
             'firstName': user.first_name,
             'lastName': user.last_name,
-            'picture': profile.picture.url,
+            'picture': profile.picture.url if profile.picture else None ,
             'token': token.key
         })

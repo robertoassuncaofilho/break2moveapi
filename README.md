@@ -22,11 +22,13 @@
 
 ## ✨ Technologies
 
-This project was developed using the following back-end technologies:
+This project was developed using the following technologies:
 
 - Python
 - Django 
 - Django Rest Framework
+- Python unittest
+- AWS S3
 - Swagger
 
 The front-end project is acessible in the following repository:
